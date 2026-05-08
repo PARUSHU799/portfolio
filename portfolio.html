@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Orsu Parashuram | Portfolio</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050816;
+    color:white;
+}
+
+/* NAVBAR */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    background:rgba(0,0,0,0.5);
+    backdrop-filter:blur(10px);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:bold;
+    color:#4da6ff;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#4da6ff;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:120px 8%;
+    background:linear-gradient(to right,#050816,#0f172a);
+}
+
+.hero-text{
+    max-width:650px;
+}
+
+.hero-text h3{
+    font-size:28px;
+    color:#cbd5e1;
+}
+
+.hero-text h1{
+    font-size:80px;
+    line-height:90px;
+    margin-top:10px;
+}
+
+.hero-text span{
+    color:#4da6ff;
+}
+
+.hero-text p{
+    margin-top:25px;
+    line-height:1.8;
+    color:#d1d5db;
+    font-size:18px;
+}
+
+.btns{
+    margin-top:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 35px;
+    margin-right:15px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn-primary{
+    background:#4da6ff;
+    color:black;
+}
+
+.btn-primary:hover{
+    transform:translateY(-5px);
+}
+
+.btn-outline{
+    border:2px solid #4da6ff;
+    color:white;
+}
+
+.btn-outline:hover{
+    background:#4da6ff;
+    color:black;
+}
+
+/* PHOTO */
+
+.hero-image img{
+    width:420px;
+    height:600px;
+    object-fit:cover;
+    border-radius:25px;
+    border:5px solid #4da6ff;
+    box-shadow:0 0 30px rgba(77,166,255,0.4);
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:50px;
+    margin-bottom:60px;
+    color:#4da6ff;
+}
+
+/* ABOUT */
+
+.about-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.about-box{
+    background:#111827;
+    padding:35px;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+.about-box:hover{
+    transform:translateY(-10px);
+}
+
+.about-box h2{
+    margin-bottom:20px;
+    color:#4da6ff;
+}
+
+.about-box p{
+    line-height:1.8;
+    color:#d1d5db;
+}
+
+/* SKILLS */
+
+.skills-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.skill-card{
+    background:#111827;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-10px);
+}
+
+.skill-card i{
+    font-size:50px;
+    color:#4da6ff;
+    margin-bottom:20px;
+}
+
+/* PROJECTS */
+
+.projects-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.project-card{
+    background:#111827;
+    padding:30px;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+}
+
+.project-card h3{
+    color:#4da6ff;
+    margin-bottom:15px;
+}
+
+.project-card p{
+    line-height:1.8;
+    color:#d1d5db;
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin-top:15px;
+    font-size:18px;
+    color:#d1d5db;
+}
+
+.socials{
+    margin-top:35px;
+}
+
+.socials a{
+    display:inline-block;
+    width:60px;
+    height:60px;
+    line-height:60px;
+    border-radius:50%;
+    background:#111827;
+    color:#4da6ff;
+    font-size:25px;
+    margin:10px;
+    transition:0.3s;
+}
+
+.socials a:hover{
+    background:#4da6ff;
+    color:black;
+    transform:translateY(-5px);
+}
+
+/* FOOTER */
+
+footer{
+    background:#020617;
+    text-align:center;
+    padding:25px;
+    color:#94a3b8;
+}
+
+/* MOBILE */
+
+@media(max-width:1000px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:150px;
+    }
+
+    .hero-text h1{
+        font-size:55px;
+        line-height:65px;
+    }
+
+    .hero-image img{
+        width:320px;
+        height:450px;
+        margin-top:50px;
+    }
+
+    .about-container{
+        grid-template-columns:1fr;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+<nav>
+
+<div class="logo">Parashuram</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-text">
+
+<h3>Hello, I'm</h3>
+
+<h1>ORSU <span>PARASHURAM</span></h1>
+
+<h3>
+Junior Software Engineer |
+Python Developer |
+Cloud & AI Enthusiast
+</h3>
+
+<p>
+
+Motivated BCA graduate with hands-on experience
+in Python, Azure Cloud, AI systems, OpenCV,
+and Full Stack Development.
+
+Award-winning developer passionate about building
+real-world scalable cloud-native applications.
+
+</p>
+
+<div class="btns">
+
+<a href="#projects" class="btn btn-primary">
+View Projects
+</a>
+
+<a href="#" class="btn btn-outline">
+Download Resume
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<!-- YOUR PHOTO -->
+<img src="C:\Users\Ramor\Downloads\ChatGPT Image May 8, 2026, 11_35_07 PM.png" alt="Orsu Parashuram">
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="about-container">
+
+<div class="about-box">
+
+<h2>Career Summary</h2>
+
+<p>
+
+I am a passionate Junior Software Engineer and
+Python Developer with strong knowledge in
+Cloud Computing, Artificial Intelligence,
+Azure Deployment, and Full Stack Development.
+
+I developed AI-powered traffic management systems
+and cloud-hosted rental applications deployed
+on Microsoft Azure.
+
+</p>
+
+</div>
+
+<div class="about-box">
+
+<h2>Education & Certifications</h2>
+
+<p>
+
+🎓 Bachelor of Computer Applications (BCA)<br><br>
+
+☁ Microsoft Azure Fundamentals (AZ-900)<br><br>
+
+🤖 IBM Artificial Intelligence Fundamentals<br><br>
+
+🔐 IBM Cybersecurity Fundamentals<br><br>
+
+💻 IBM IT Fundamentals
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2 class="section-title">Technical Skills</h2>
+
+<div class="skills-container">
+
+<div class="skill-card">
+<i class="fa-brands fa-python"></i>
+<h3>Python</h3>
+</div>
+
+<div class="skill-card">
+<i class="fa-solid fa-cloud"></i>
+<h3>Azure Cloud</h3>
+</div>
+
+<div class="skill-card">
+<i class="fa-solid fa-code"></i>
+<h3>HTML / CSS</h3>
+</div>
+
+<div class="skill-card">
+<i class="fa-solid fa-database"></i>
+<h3>SQL / MySQL</h3>
+</div>
+
+<div class="skill-card">
+<i class="fa-brands fa-git-alt"></i>
+<h3>Git & GitHub</h3>
+</div>
+
+<div class="skill-card">
+<i class="fa-solid fa-robot"></i>
+<h3>AI & OpenCV</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="projects-container">
+
+<div class="project-card">
+
+<h3>Construction Equipment Rental Website</h3>
+
+<p>
+
+Developed a complete rental platform with
+authentication, equipment booking,
+filtering, and Azure cloud deployment.
+
+</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>AI Smart Traffic Control System</h3>
+
+<p>
+
+Built an AI-powered real-time traffic density
+detection system using Python, OpenCV,
+and Canny Edge Detection.
+
+</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>Azure Cloud Hosting Project</h3>
+
+<p>
+
+Configured Azure App Services, Virtual Machines,
+Storage Accounts, and monitoring systems
+for scalable cloud hosting.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2 class="section-title">Contact Me</h2>
+
+<p>📞 +91 8688883489</p>
+
+<p>📧 ramorsu293@gmail.com</p>
+
+<p>📍 Hyderabad, Telangana</p>
+
+<div class="socials">
+
+<!-- LINKEDIN -->
+<a href="https://linkedin.com/in/parushuram-o-bba271345" target="_blank">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+
+<!-- INSTAGRAM -->
+<a href="https://www.instagram.com/" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<!-- GITHUB -->
+<a href="https://github.com/" target="_blank">
+<i class="fa-brands fa-github"></i>
+</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 ORSU PARASHURAM |
+All Rights Reserved
+</p>
+
+</footer>
+
+</body>
+</html>
